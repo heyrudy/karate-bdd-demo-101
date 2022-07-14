@@ -1,0 +1,15 @@
+server:
+  port: 3000
+
+spring:
+  banner:
+    location: classpath:config/banner-name.txt
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 128KB
+      max-request-size: 128KB
+
+upload:
+  path:
+    name: uploads
