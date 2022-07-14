@@ -1,4 +1,4 @@
-package com.heyrudy.karatebdddemo.app.core.states;
+package com.heyrudy.karatebdddemo.app.api.aggregates.dto;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -14,6 +14,6 @@ import lombok.experimental.FieldDefaults;
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public final class Request {
+public final class RequestDetails {
     String name;
 }
