@@ -2,8 +2,6 @@ package com.heyrudy.karatebdddemo.app.api.controllers;
 
 import com.heyrudy.karatebdddemo.app.api.aggregates.dto.RequestDetails;
 import com.heyrudy.karatebdddemo.app.api.aggregates.dto.ResultDetails;
-import lombok.AccessLevel;
-import lombok.experimental.FieldDefaults;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 
 @RestController
-@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class NameTransformationController {
 
     @PostMapping(value = "/name")
