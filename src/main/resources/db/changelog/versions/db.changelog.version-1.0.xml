@@ -5,7 +5,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
     https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-    <!--    <include file="../features/db.changelog-001-init-todos-table.xml" relativeToChangelogFile="true"/>-->
+        <include file="../features/db.changelog-001-init-comment-table.xml" relativeToChangelogFile="true"/>
     <!--    <include file="../features/db.changelog-002-populate-todos-table.xml" relativeToChangelogFile="true"/>-->
 
 </databaseChangeLog>

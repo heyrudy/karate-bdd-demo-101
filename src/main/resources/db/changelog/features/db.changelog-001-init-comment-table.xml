@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="kko"
+               id="create-table-comments"
+               failOnError="true">
+
+        <comment>create table to store comment information</comment>
+
+        <createTable remarks="A resume about comment information"
+                     schemaName="public"
+                     tableName="comment">
+            <column remarks="The unique identifier of the comment"
+                    name="id"
+                    type="BIGINT"
+                    autoIncrement="true">
+                <constraints nullable="false"
+                             primaryKey="true"
+                             primaryKeyName="comment_pkey"/>
+            </column>
+            <column remarks="The quote of the comment item"
+                    name="quote"
+                    type="varchar(255)"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
