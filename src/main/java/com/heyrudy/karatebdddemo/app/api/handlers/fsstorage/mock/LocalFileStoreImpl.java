@@ -5,6 +5,7 @@ import com.heyrudy.karatebdddemo.app.core.abilities.fsstorage.exceptions.FsInter
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
@@ -23,6 +24,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+@Qualifier(value = "LocalFileStore")
 @Service
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class LocalFileStoreImpl implements IFileStore {

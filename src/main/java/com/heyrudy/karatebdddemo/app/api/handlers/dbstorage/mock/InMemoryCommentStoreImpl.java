@@ -4,12 +4,12 @@ import com.heyrudy.karatebdddemo.app.core.abilities.dbstorage.ICommentStore;
 import com.heyrudy.karatebdddemo.app.core.states.Comment;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
 
-@Repository
+@Component(value = "InMemoryCommentRepo")
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class InMemoryCommentStoreImpl implements ICommentStore {
 
