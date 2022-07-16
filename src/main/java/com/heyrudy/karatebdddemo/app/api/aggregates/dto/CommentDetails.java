@@ -15,7 +15,7 @@ import lombok.experimental.FieldDefaults;
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public final class CommentDetails {
+public class CommentDetails {
 
     String quote;
 
