@@ -9,6 +9,17 @@ spring:
       enabled: true
       max-file-size: 128KB
       max-request-size: 128KB
+  datasource:
+    url: jdbc:h2:~/h2-db/testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: sa
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+    enabled: true
+    drop-first: false
 
 upload:
   path:
