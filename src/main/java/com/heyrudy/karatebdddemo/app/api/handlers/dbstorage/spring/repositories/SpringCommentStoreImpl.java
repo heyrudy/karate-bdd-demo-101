@@ -1,4 +1,4 @@
-package com.heyrudy.karatebdddemo.app.api.handlers.dbstorage.spring;
+package com.heyrudy.karatebdddemo.app.api.handlers.dbstorage.spring.repositories;
 
 import com.heyrudy.karatebdddemo.app.api.handlers.dbstorage.spring.entities.CommentEntity;
 import com.heyrudy.karatebdddemo.app.core.abilities.dbstorage.ICommentStore;
@@ -16,7 +16,7 @@ import javax.persistence.PersistenceContext;
 @Component(value = "SpringCommentRepo")
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-public class CommentRepositoryImpl implements ICommentStore {
+public class SpringCommentStoreImpl implements ICommentStore {
 
     @PersistenceContext
     EntityManager em;
