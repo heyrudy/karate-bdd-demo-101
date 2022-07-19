@@ -16,6 +16,7 @@ spring:
     password: sa
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+    open-in-view: false
   liquibase:
     change-log: classpath:db/changelog/db.changelog-master.xml
     enabled: true
