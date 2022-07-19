@@ -27,7 +27,7 @@ public class CommentEntity {
     Long id;
     String quote;
 
-    public Comment fromCommentEntity() {
+    public Comment toComment() {
         return Comment.builder()
                 .id(this.getId())
                 .quote(this.getQuote())

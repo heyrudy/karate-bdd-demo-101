@@ -26,7 +26,7 @@ public class SpringCommentStoreImpl implements ICommentStore {
         String getCommentQuoteNamedQuery = "Comment.getFirstCommentQuote";
         Comment comment = em.createNamedQuery(getCommentQuoteNamedQuery, CommentEntity.class)
                 .getSingleResult()
-                .fromCommentEntity();
+                .toComment();
         em.close();
         return comment;
     }
