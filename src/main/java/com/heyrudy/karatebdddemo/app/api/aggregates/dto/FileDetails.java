@@ -1,6 +1,10 @@
 package com.heyrudy.karatebdddemo.app.api.aggregates.dto;
 
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
 import java.io.File;
