@@ -1,6 +1,5 @@
 package com.heyrudy.karatebdddemo.app.api.handlers.dbstorage.spring.entities;
 
-import com.heyrudy.karatebdddemo.app.core.states.Comment;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -37,11 +36,4 @@ public class CommentEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String quote;
-
-    public Comment toComment() {
-        return Comment.builder()
-                .id(this.getId())
-                .quote(this.getQuote())
-                .build();
-    }
 }

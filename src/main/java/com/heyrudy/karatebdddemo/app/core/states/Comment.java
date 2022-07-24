@@ -16,5 +16,4 @@ public class Comment {
 
     Long id;
     String quote;
-
 }
