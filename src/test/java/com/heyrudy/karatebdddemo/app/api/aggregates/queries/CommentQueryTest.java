@@ -1,6 +1,7 @@
 package com.heyrudy.karatebdddemo.app.api.aggregates.queries;
 
 import com.heyrudy.karatebdddemo.app.api.aggregates.dto.CommentDetails;
+import com.heyrudy.karatebdddemo.app.api.aggregates.dto.mapper.CommentDetailsMapper;
 import com.heyrudy.karatebdddemo.app.core.interactors.GetCommentQuote;
 import com.heyrudy.karatebdddemo.app.core.states.Comment;
 import org.assertj.core.api.Assertions;
@@ -21,6 +22,9 @@ class CommentQueryTest {
     @Mock
     GetCommentQuote getCommentQuote;
 
+    @Mock
+    CommentDetailsMapper commentDetailsMapper;
+
     @Test
     @DisplayName(value = "Given a Comment When query Comment quote Then return quote")
     void getCommentQuote() {
@@ -28,7 +32,7 @@ class CommentQueryTest {
         Comment comment = Comment.builder().id(1L).quote("test").build();
 
         Mockito.when(getCommentQuote.execute()).thenReturn(comment);
-        CommentDetails expected = CommentDetails.fromComment(comment);
+        CommentDetails expected = commentDetailsMapper.fromComment(comment);
 
         // ACT
         CommentDetails actual = commentQuery.getCommentQuote();
