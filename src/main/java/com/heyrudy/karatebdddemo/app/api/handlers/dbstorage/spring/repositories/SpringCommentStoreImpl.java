@@ -1,6 +1,7 @@
 package com.heyrudy.karatebdddemo.app.api.handlers.dbstorage.spring.repositories;
 
 import com.heyrudy.karatebdddemo.app.api.handlers.dbstorage.spring.entities.CommentEntity;
+import com.heyrudy.karatebdddemo.app.api.handlers.dbstorage.spring.entities.mapper.CommentEntityMapper;
 import com.heyrudy.karatebdddemo.app.core.abilities.dbstorage.ICommentStore;
 import com.heyrudy.karatebdddemo.app.core.states.Comment;
 import lombok.AccessLevel;
@@ -20,14 +21,14 @@ public class SpringCommentStoreImpl implements ICommentStore {
 
     @PersistenceContext
     EntityManager em;
+    CommentEntityMapper commentEntityMapper;
 
     @Override
     public Comment getCommentQuote() {
         String getCommentQuoteNamedQuery = "Comment.getFirstCommentQuote";
-        Comment comment = em.createNamedQuery(getCommentQuoteNamedQuery, CommentEntity.class)
-                .getSingleResult()
-                .toComment();
+        CommentEntity commentEntity = em.createNamedQuery(getCommentQuoteNamedQuery, CommentEntity.class)
+                .getSingleResult();
         em.close();
-        return comment;
+        return commentEntityMapper.toComment(commentEntity);
     }
 }
