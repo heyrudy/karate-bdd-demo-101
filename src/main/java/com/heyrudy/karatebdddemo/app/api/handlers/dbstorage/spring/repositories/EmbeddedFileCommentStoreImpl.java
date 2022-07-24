@@ -17,7 +17,7 @@ import javax.persistence.PersistenceContext;
 @Component(value = "SpringCommentRepo")
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-public class SpringCommentStoreImpl implements ICommentStore {
+public class EmbeddedFileCommentStoreImpl implements ICommentStore {
 
     @PersistenceContext
     EntityManager em;
