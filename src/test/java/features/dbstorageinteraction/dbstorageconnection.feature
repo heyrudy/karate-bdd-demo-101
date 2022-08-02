@@ -8,6 +8,6 @@ Feature: Connection to a database
     * db.insertRows("INSERT INTO COMMENT VALUES (1, 'Hello world, use Karate! :)')")
     * configure afterScenario = function(){ karate.call('after-scenario.feature'); }
 
-  Scenario: Upload file
+  Scenario: Check db migration
     * def comments = db.readRows('SELECT * FROM COMMENT')
     Then match comments contains {ID:'#notnull', QUOTE:'#notnull'}
