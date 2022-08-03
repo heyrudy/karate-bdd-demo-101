@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.PositiveOrZero;
 import java.io.File;
 
 @NoArgsConstructor
@@ -16,7 +18,10 @@ import java.io.File;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class FileDetails {
 
+    @NotBlank
     String name;
+
+    @PositiveOrZero
     long sizeInBytes;
 
     public static FileDetails fromFile(File file) {
