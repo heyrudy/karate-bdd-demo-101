@@ -14,10 +14,10 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
-class CommentQueryTest {
+class GetCommentQuoteQueryTest {
 
     @InjectMocks
-    CommentQuery commentQuery;
+    GetCommentQuoteQuery getCommentQuoteQuery;
 
     @Mock
     GetCommentQuote getCommentQuote;
@@ -35,7 +35,7 @@ class CommentQueryTest {
         CommentGetDetails expected = commentGetDetailsMapper.fromComment(comment);
 
         // ACT
-        CommentGetDetails actual = commentQuery.getCommentQuote();
+        CommentGetDetails actual = getCommentQuoteQuery.getCommentQuote();
 
         // ASSERT
         Assertions.assertThat(actual)

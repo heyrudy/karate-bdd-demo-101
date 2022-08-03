@@ -1,7 +1,7 @@
 package com.heyrudy.karatebdddemo.app.api.controllers;
 
 import com.heyrudy.karatebdddemo.app.api.aggregates.dto.CommentGetDetails;
-import com.heyrudy.karatebdddemo.app.api.aggregates.queries.CommentQuery;
+import com.heyrudy.karatebdddemo.app.api.aggregates.queries.GetCommentQuoteQuery;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -15,11 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class CommentController {
 
-    CommentQuery commentQuery;
+    GetCommentQuoteQuery getCommentQuoteQuery;
 
     @GetMapping(value = "/quote")
     @ResponseStatus(code = HttpStatus.OK)
     public CommentGetDetails getCommentQuote() {
-        return commentQuery.getCommentQuote();
+        return getCommentQuoteQuery.getCommentQuote();
     }
 }

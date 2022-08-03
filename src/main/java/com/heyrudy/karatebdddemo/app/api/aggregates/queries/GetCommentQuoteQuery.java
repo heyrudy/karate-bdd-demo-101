@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-public class CommentQuery {
+public class GetCommentQuoteQuery {
 
     GetCommentQuote getCommentQuote;
     CommentGetDetailsMapper commentGetDetailsMapper;
