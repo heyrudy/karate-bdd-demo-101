@@ -1,6 +1,6 @@
 package com.heyrudy.karatebdddemo.app.api.controllers;
 
-import com.heyrudy.karatebdddemo.app.api.aggregates.dto.CommentDetails;
+import com.heyrudy.karatebdddemo.app.api.aggregates.dto.CommentGetDetails;
 import com.heyrudy.karatebdddemo.app.api.aggregates.queries.CommentQuery;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -19,7 +19,7 @@ public class CommentController {
 
     @GetMapping(value = "/quote")
     @ResponseStatus(code = HttpStatus.OK)
-    public CommentDetails getCommentQuote() {
+    public CommentGetDetails getCommentQuote() {
         return commentQuery.getCommentQuote();
     }
 }

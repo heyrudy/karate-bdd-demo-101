@@ -1,7 +1,7 @@
 package com.heyrudy.karatebdddemo.app.api.aggregates.queries;
 
-import com.heyrudy.karatebdddemo.app.api.aggregates.dto.CommentDetails;
-import com.heyrudy.karatebdddemo.app.api.aggregates.dto.mapper.CommentDetailsMapper;
+import com.heyrudy.karatebdddemo.app.api.aggregates.dto.CommentGetDetails;
+import com.heyrudy.karatebdddemo.app.api.aggregates.dto.mapper.CommentGetDetailsMapper;
 import com.heyrudy.karatebdddemo.app.core.interactors.GetCommentQuote;
 import com.heyrudy.karatebdddemo.app.core.states.Comment;
 import lombok.AccessLevel;
@@ -15,10 +15,10 @@ import org.springframework.stereotype.Service;
 public class CommentQuery {
 
     GetCommentQuote getCommentQuote;
-    CommentDetailsMapper commentDetailsMapper;
+    CommentGetDetailsMapper commentGetDetailsMapper;
 
-    public CommentDetails getCommentQuote() {
+    public CommentGetDetails getCommentQuote() {
         Comment comment = getCommentQuote.execute();
-        return commentDetailsMapper.fromComment(comment);
+        return commentGetDetailsMapper.fromComment(comment);
     }
 }
