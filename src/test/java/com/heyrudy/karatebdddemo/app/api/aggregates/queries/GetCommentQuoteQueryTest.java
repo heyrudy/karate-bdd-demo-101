@@ -30,9 +30,10 @@ class GetCommentQuoteQueryTest {
     void getCommentQuote() {
         // ARRANGE
         Comment comment = Comment.builder().id(1L).quote("test").build();
+        CommentGetDetails expected = CommentGetDetails.builder().quote("test").build();
 
         Mockito.when(getCommentQuote.execute()).thenReturn(comment);
-        CommentGetDetails expected = commentGetDetailsMapper.fromComment(comment);
+        Mockito.when(commentGetDetailsMapper.fromComment(comment)).thenReturn(expected);
 
         // ACT
         CommentGetDetails actual = getCommentQuoteQuery.getCommentQuote();
